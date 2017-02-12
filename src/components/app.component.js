@@ -1,19 +1,13 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 
-class App extends Component {
-    constructor(props) {
-        super(props)
+import BookList from '../containers/book_list.container'
 
-        this.state = {
-        }
-    }
-
+export default class App extends Component {
     render() {
         return (
-            <div></div>
+            <div>
+                <BookList />
+            </div>
         )
     }
 }
-
-ReactDOM.render(<App />, document.querySelector('.container'))
