@@ -23,6 +23,7 @@ class SearchBar extends Component {
         }
 
         this.onInputChange = this.onInputChange.bind(this)
+        this.onFormSubmit = this.onFormSubmit.bind(this)
     }
 
     onInputChange(event) {
@@ -33,7 +34,8 @@ class SearchBar extends Component {
         event.preventDefault()  // Prevent the default page reload
 
         // Fetch weather data
-
+        this.props.fetchWeather(this.state.searchTerm)
+        this.setState({ searchTerm: '' })
     }
 
     render() {
