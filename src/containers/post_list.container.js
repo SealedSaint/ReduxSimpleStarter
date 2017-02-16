@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Link } from 'react-router-dom'
 
 import { fetchPosts } from '../actions/index'
 
@@ -44,7 +45,14 @@ class PostList extends Component {
     render() {
         return (
             <div className="post-list">
-                <h3>Posts</h3>
+                <div>
+                    <div style={{width: '50%', display: 'inline-block'}}>
+                        <h3>Posts</h3>
+                    </div>
+                    <div style={{width: '50%', display: 'inline-block'}}>
+                        <Link to="/posts/new" className="btn btn-primary" style={{float: 'right'}}>Add Post</Link>
+                    </div>
+                </div>
                 {this.props.posts.map(this.renderListItem)}
             </div>
         )

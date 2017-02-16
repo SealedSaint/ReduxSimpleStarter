@@ -6,10 +6,6 @@
     background-color: #eee;
 }
 
-.single-post {
-    padding: 15px;
-}
-
-.post-list {
+.single-post, .post-list, .create-post-form {
     padding: 15px;
 }
