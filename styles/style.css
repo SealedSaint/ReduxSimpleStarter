@@ -1,0 +1,15 @@
+.post-list-item {
+    padding: 10px;
+    cursor: pointer;
+}
+.post-list-item:hover {
+    background-color: #eee;
+}
+
+.single-post {
+    padding: 15px;
+}
+
+.post-list {
+    padding: 15px;
+}
