@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { Link } from 'react-router-dom'
 
-import { fetchSinglePost } from '../actions/index'
+import { fetchSinglePost, unmountSinglePost } from '../actions/index'
 
 function mapStateToProps({ singlePost }) {
     return {
@@ -11,7 +12,7 @@ function mapStateToProps({ singlePost }) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ fetchSinglePost }, dispatch)
+    return bindActionCreators({ fetchSinglePost, unmountSinglePost }, dispatch)
 }
 
 class SinglePost extends Component {
@@ -27,11 +28,20 @@ class SinglePost extends Component {
         if(!post) return <div>Loading...</div>
 
         return (
-            <div className="single-post">
-                <h3>{post.title}</h3>
-                <div>{post.content}</div>
+            <div>
+                <div className="back-btn">
+                    <Link to="/posts" className="btn btn-primary">Back</Link>
+                </div>
+                <div className="single-post">
+                    <h3>{post.title}</h3>
+                    <div>{post.content}</div>
+                </div>
             </div>
         )
+    }
+
+    componentWillUnmount() {
+        this.props.unmountSinglePost()
     }
 }
 

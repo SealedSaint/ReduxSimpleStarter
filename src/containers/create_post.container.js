@@ -69,7 +69,7 @@ class CreatePost extends Component {
         return (
             <div>
                 <div className="back-btn">
-                    <Link to="/posts" className="btn btn-primary">Back</Link>
+                    <Link to="/posts" className="btn btn-danger">Back</Link>
                 </div>
                 <form onSubmit={this.onFormSubmit} className="create-post-form">
                     <h3>Create a New Post</h3>

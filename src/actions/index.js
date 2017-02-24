@@ -4,6 +4,7 @@ export const CREATE_POST = 'CREATE_POST'
 export const CREATE_POST_LOADING = 'CREATE_POST_LOADING'
 export const FETCH_POSTS = 'FETCH_POSTS'
 export const FETCH_SINGLE_POST = 'FETCH_SINGLE_POST'
+export const UNMOUNT_SINGLE_POST = 'UNMOUNT_SINGLE_POST'
 export const UPDATE_CREATE_POST_FORM = 'UPDATE_CREATE_POST_FORM'
 
 function buildUrl(path) {
@@ -15,20 +16,13 @@ function buildUrl(path) {
 export function submitPost(post) {
     return [
         {
-            type: CREATE_POST_LOADING
-        },
-        {
             type: CREATE_POST,
             payload: axios.post(buildUrl('/posts'), post)
+        },
+        {
+            type: CREATE_POST_LOADING
         }
     ]
-}
-
-export function updateCreatePostForm(formData) {
-    return {
-        type: UPDATE_CREATE_POST_FORM,
-        formData: formData
-    }
 }
 
 export function fetchPosts() {
@@ -42,5 +36,18 @@ export function fetchSinglePost(id) {
     return {
         type: FETCH_SINGLE_POST,
         payload: axios.get(buildUrl(`/posts/${id}`))
+    }
+}
+
+export function unmountSinglePost() {
+    return {
+        type: UNMOUNT_SINGLE_POST
+    }
+}
+
+export function updateCreatePostForm(formData) {
+    return {
+        type: UPDATE_CREATE_POST_FORM,
+        formData: formData
     }
 }
