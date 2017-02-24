@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux'
-import { reducer as FormReducer } from 'redux-form'
 
+import CreatePostReducer from './create_post.reducer'
 import PostsReducer from './posts.reducer'
 import SinglePostReducer from './single_post.reducer'
 
 const RootReducer = combineReducers({
-    form: FormReducer,
     posts: PostsReducer,
-    singlePost: SinglePostReducer
+    singlePost: SinglePostReducer,
+    createPost: CreatePostReducer,
 })
 
 export default RootReducer
