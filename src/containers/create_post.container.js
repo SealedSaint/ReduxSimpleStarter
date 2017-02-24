@@ -26,6 +26,14 @@ class CreatePost extends Component {
         this.getFormPost = this.getFormPost.bind(this)
         this.onFormSubmit = this.onFormSubmit.bind(this)
         this.renderStatus = this.renderStatus.bind(this)
+        this.validateForm = this.validateForm.bind(this)
+    }
+
+    validateForm() {
+        return (
+            this.props.formTitle.length > 0 &&
+            this.props.formContent.length > 0
+        )
     }
 
     getFormPost() {
@@ -37,7 +45,11 @@ class CreatePost extends Component {
 
     onFormSubmit(event) {
         event.preventDefault()
-        this.props.submitPost(this.getFormPost())
+
+        if(this.validateForm())
+            this.props.submitPost(this.getFormPost())
+        else
+            window.alert("Please fill out all required fields.")
     }
 
     // Handles rendering the creating and created message
@@ -63,7 +75,7 @@ class CreatePost extends Component {
                     <h3>Create a New Post</h3>
 
                     <div className="form-group">
-                        <label htmlFor="title">Title</label>
+                        <label htmlFor="title">Title*</label>
                         <input type="text" className="form-control"
                             value={this.props.formTitle}
                             onChange={event => this.props.updateCreatePostForm({ formTitle: event.target.value })}
@@ -71,7 +83,7 @@ class CreatePost extends Component {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="content">Content</label>
+                        <label htmlFor="content">Content*</label>
                         <textarea className="form-control"
                             value={this.props.formContent}
                             onChange={event => this.props.updateCreatePostForm({ formContent: event.target.value })}

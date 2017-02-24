@@ -14,20 +14,14 @@ function buildUrl(path) {
 
 export function submitPost(post) {
     return [
-        createPostLoading(),
-        createPost(post)
+        {
+            type: CREATE_POST_LOADING
+        },
+        {
+            type: CREATE_POST,
+            payload: axios.post(buildUrl('/posts'), post)
+        }
     ]
-}
-function createPostLoading() {
-    return {
-        type: CREATE_POST_LOADING
-    }
-}
-function createPost(post) {
-    return {
-        type: CREATE_POST,
-        payload: axios.post(buildUrl('/posts'), post)
-    }
 }
 
 export function updateCreatePostForm(formData) {
