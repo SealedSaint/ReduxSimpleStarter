@@ -19,7 +19,7 @@ describe('AddComment', () => {
     })
 
     describe('textbox functionality', () => {
-        let text = 'new comment'
+        const text = 'new comment'
         beforeEach(() => {
             component.find('textarea').simulate('change', text)
         })
