@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux'
 
+import AuthReducer from './auth.reducer'
+import MessageReducer from './message.reducer'
+
 const RootReducer = combineReducers({
-    state: (state = {}) => state
+    auth: AuthReducer,
+    message: MessageReducer
 })
 
 export default RootReducer
