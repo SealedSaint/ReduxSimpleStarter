@@ -11,11 +11,20 @@ function mapStateToProps({ auth }) {
 }
 
 class HeaderBar extends Component {
+    static contextTypes = {
+        router: React.PropTypes.object
+    }
+
+    signOut() {
+        this.props.signOut()
+        this.context.router.history.push('/signin')
+    }
+
     renderAuthLinks() {
         if(this.props.auth.authenticated) {
             return (
                 <div className="header-block" style={styles.headerBlock}>
-                    <button onClick={() => this.props.signOut()}>Sign Out</button>
+                    <button onClick={() => this.signOut()}>Sign Out</button>
                 </div>
             )
         }

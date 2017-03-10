@@ -3,7 +3,6 @@ import axios from 'axios'
 import * as types from './types'
 
 const API_URL = 'http://localhost:8081'
-const AUTH_HEADER = { authorization: localStorage.getItem('token') }
 
 export function signUp(email, password) {
     return function(dispatch) {
@@ -51,8 +50,14 @@ export function signOut() {
 }
 
 export function fetchMessage() {
-    return {
-        type: types.FETCH_MESSAGE,
-        payload: axios.get(API_URL, { headers: AUTH_HEADER })
+    return function(dispatch) {
+        axios.get(API_URL, { headers: { authorization: localStorage.getItem('token') } })
+            .then(res => {
+                dispatch({
+                    type: types.FETCH_MESSAGE,
+                    message: res.data.message || res.data
+                })
+            })
+            .catch(error => {})
     }
 }
