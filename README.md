@@ -1,25 +1,28 @@
 # ReduxSimpleStarter
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+This is a boilerplate starter package for getting a React-Redux app up and running, ready for development.
+Comes equipped with Webpack, Babel, Mocha/Chai for testing, and Redux setup.
 
 ###Getting Started###
 
-There are two methods for getting started with this repo.
-
-####Familiar with Git?#####
-Checkout this repo, install dependencies, then start the gulp process with the following:
+Checkout this repo, install dependencies, then start the webpack server:
 
 ```
-	> git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
-	> cd ReduxSimpleStarter
-	> npm install
-	> npm start
+> git clone https://github.com/SealedSaint/ReduxSimpleStarter.git
+> cd ReduxSimpleStarter
+> npm install
+> npm start
 ```
 
-####Not Familiar with Git?#####
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+###Examples in Branches###
 
-```
-	> npm install
-	> npm start
-```
+Checkout the different branches to look for functioning examples that showcase different aspects of React and/or Redux. These branches are meant to be functioning references for specific pieces of functionality
+
+Some of of the examples include:
+
+1. __React-only basics__ (no redux) [YouTubeApp](https://github.com/SealedSaint/ReduxSimpleStarter/tree/YouTubeApp)
+2. __Redux basics__ (minimal app) [BookListApp](https://github.com/SealedSaint/ReduxSimpleStarter/tree/BookListApp)
+3. __API calls with Redux__ [WeatherApp](https://github.com/SealedSaint/ReduxSimpleStarter/tree/WeatherApp)
+4. __Programmatic Testing__ [TestingApp](https://github.com/SealedSaint/ReduxSimpleStarter/tree/TestingApp)
+5. __React Higher Order Components (HOC)__ [HigherOrderComponentsApp](https://github.com/SealedSaint/ReduxSimpleStarter/tree/HigherOrderComponentsApp)
+6. __Redux Middleware__ [MiddlewareApp](https://github.com/SealedSaint/ReduxSimpleStarter/tree/MiddlewareApp)
