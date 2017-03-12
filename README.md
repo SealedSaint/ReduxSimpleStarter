@@ -8,7 +8,7 @@ Comes equipped with Webpack, Babel, Mocha/Chai for testing, and Redux setup.
 Checkout this repo, install dependencies, then start the webpack server:
 
 ```
-> git clone git@github.com:SealedSaint/ReduxSimpleStarter.git
+> git clone https://github.com/SealedSaint/ReduxSimpleStarter.git
 > cd ReduxSimpleStarter
 > npm install
 > npm start
