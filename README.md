@@ -3,7 +3,7 @@
 This is a boilerplate starter package for getting a React-Redux app up and running, ready for development.
 Comes equipped with Webpack, Babel, Mocha/Chai for testing, and Redux setup.
 
-###Getting Started###
+## Getting Started
 
 Checkout this repo, install dependencies, then start the webpack server:
 
@@ -14,7 +14,7 @@ Checkout this repo, install dependencies, then start the webpack server:
 > npm start
 ```
 
-###Examples in Branches###
+## Examples in Branches
 
 Checkout the different branches to look for functioning examples that showcase different aspects of React and/or Redux. These branches are meant to be functioning references for specific pieces of functionality
 
